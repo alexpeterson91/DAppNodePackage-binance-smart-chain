@@ -1,6 +1,6 @@
-# Core-Geth DAppNode package for ETC
+# Core-Geth DAppNode package for BSC
 
-[![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)](http://my.dappnode/#/installer/ethereum-classic.dnp.dappnode.eth)
+[![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)](http://my.dappnode/#/installer/binance-smart-chain.dnp.dappnode.eth)
 
 [![Core-Geth github](https://img.shields.io/badge/Core--Geth-Github-blue.svg)](https://github.com/etclabscore/core-geth)
 
@@ -44,23 +44,37 @@ You can use this package without installing it in your DAppNode following these 
 
 You can edit the `docker-compose.yml` and add extra options, such as:
 ```
- - EXTRA_OPTS=--ws.api db,eth,net,ssh,miner,web3,personal,admin,txpool
+ - EXTRA_OPTS=--ws.api eth,net,ssh,miner,web3,personal,admin,txpool
 ```
 
 ## Connect using web3js
-
-If the package is running and you're connected to your dappnode you can use:
-```
-var Web3 = require('web3');
-var web3 = new Web3('ws://ethereum-classic.dappnode:8546')
-web3.eth.getBlockNumber().then(console.log)
-```
-In case you are running it locally:
-```
-var Web3 = require('web3');
-var web3 = new Web3('ws://127.0.0.1:8546')
-web3.eth.getBlockNumber().then(console.log)
-```
+HTTP (uses port 8545):
+   If the package is running and you're connected to your dappnode you can use:
+   ```
+   var Web3 = require('web3');
+   var web3 = new Web3('http://binance-smart-chain.dappnode:8545')
+   web3.eth.getBlockNumber().then(console.log)
+   ```
+   In case you are running it locally:
+   ```
+   var Web3 = require('web3');
+   var web3 = new Web3('http://127.0.0.1:8545')
+   web3.eth.getBlockNumber().then(console.log)
+   ```
+   
+WEBSOCKETS (uses port 8546):
+   If the package is running and you're connected to your dappnode you can use:
+   ```
+   var Web3 = require('web3');
+   var web3 = new Web3('ws://binance-smart-chain.dappnode:8546')
+   web3.eth.getBlockNumber().then(console.log)
+   ```
+   In case you are running it locally:
+   ```
+   var Web3 = require('web3');
+   var web3 = new Web3('ws://127.0.0.1:8546')
+   web3.eth.getBlockNumber().then(console.log)
+   ```
 
 ## License
 
