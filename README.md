@@ -47,8 +47,9 @@ You can edit the `docker-compose.yml` and add extra options, such as:
  - EXTRA_OPTS=--ws.api eth,net,ssh,miner,web3,personal,admin,txpool
 ```
 
-## Connect using web3js
-HTTP (uses port 8545):
+# Connect using web3js
+## HTTP (uses port 8545):
+
    If the package is running and you're connected to your dappnode you can use:
    ```
    var Web3 = require('web3');
@@ -62,7 +63,8 @@ HTTP (uses port 8545):
    web3.eth.getBlockNumber().then(console.log)
    ```
    
-WEBSOCKETS (uses port 8546):
+## WEBSOCKETS (uses port 8546):
+
    If the package is running and you're connected to your dappnode you can use:
    ```
    var Web3 = require('web3');
