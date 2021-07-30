@@ -1,7 +1,7 @@
 version: "3.4"
 services:
-  ethereum-classic.dnp.dappnode.eth:
-    image: "ethereum-classic.dnp.dappnode.eth:1.0.0"
+  binance-smart-chain.dnp.dappnode.eth:
+    image: "binance-smart-chain.dnp.dappnode.eth:1.0.0"
     build:
       context: ./build
       args:
@@ -12,9 +12,12 @@ services:
       - "EXTRA_OPTS=--http.api eth,net,web3,txpool --nousb"
       - SYNCMODE
     ports:
-      - "30303"
-      - 30303/udp
-      - 30304/udp
+      - "30311"
+      - 30311/udp # NODE P2P
+      - 30311/tcp # NODE P2P
+      - 6060/tcp  # pprof / metrics
+      - 8545/tcp  # HTTP based JSON RPC API
+      - 8546/tcp  # WebSocket based JSON RPC API
     restart: always
 volumes:
   geth: {}
