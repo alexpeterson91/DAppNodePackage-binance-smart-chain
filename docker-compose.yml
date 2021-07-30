@@ -1,7 +1,8 @@
 version: "3.4"
 services:
-  binance-smart-chain.dnp.dappnode.eth:
-    image: "binance-smart-chain.dnp.dappnode.eth:1.0.0"
+  #binance-smart-chain.dnp.dappnode.eth:
+  '0xf18686AcB3bfE4353f3aBd7Edad784Dc3D31E69f'
+    image: "binance-smart-chain.ryandunn.eth:1.0.0"
     build:
       context: ./build
       args:
