@@ -1,10 +1,4 @@
-FROM golang:1.15-alpine as builder
-
-#ARG UPSTREAM_VERSION
-
-
-RUN apk add --no-cache make gcc musl-dev linux-headers git bash
-#RUN git clone -b ${UPSTREAM_VERSION}
+FROM debian:bullseye-slim
 
 
 RUN apt-get update -y \
@@ -19,11 +13,11 @@ RUN curl --silent "https://api.github.com/repos/binance-chain/bsc/releases/tags/
     sed -i 's/^HTTPHost.*/HTTPHost = "0.0.0.0"/' /config.toml && \
     sed -i '/^WSPort.*/a WSHost = "0.0.0.0"' /config.toml && \
     sed -i 's/^HTTPVirtualHosts.*/HTTPVirtualHosts = ["*"]/' /config.toml && \
-    sed -i '/Node\.LogConfig/,/^$/d' /config.toml && \ 
+    sed -i '/Node\.LogConfig/,/^$/d' /config.toml && \
     mv geth_linux /usr/local/bin/bsc && \
     chmod +x /usr/local/bin/bsc
 
-ENV BSC_DATADIR=/root/.ethereum
+ENV BSC_DATADIR=/data/bsc
 
 COPY docker-entrypoint.sh /entrypoint.sh
 

@@ -1,7 +1,7 @@
 version: "3.4"
 services:
-  binance-smart-chain.dnp.dappnode.eth:
-    image: "binance-smart-chain.dnp.eth:1.0.0"
+  bsc-node.ryandunn.eth:
+    image: "bsc-node.ryandunn.eth"
     build:
       context: ./build
       args:
@@ -9,8 +9,8 @@ services:
     volumes:
       - "geth:/data/bsc"
     environment:
-      - "EXTRA_OPTS= --nousb --syncmode full --gcmode archive --txlookuplimit 0 --http.api admin,debug,web3,eth,txpool,personal,parlia,miner,net --http.corsdomain '*' --ws --ws.api admin,debug,web3,eth,txpool,personal,parlia,miner,net --ws.origins '*' --graphql --graphql.corsdomain '*'"
-      - "SYNCMODE = full"
+      - "EXTRA_OPTS= --syncmode full --gcmode archive --txlookuplimit 0 --http.api admin,debug,web3,eth,txpool,personal,parlia,miner,net --http.corsdomain '*' --ws --ws.api admin,debug,web3,eth,txpool,personal,parlia,miner,net --ws.origins '*' --graphql --graphql.corsdomain '*'"
+      - "SYNCMODE= full"
     ports:
       - "30311"
       - 30311/udp # NODE P2P
