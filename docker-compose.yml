@@ -1,11 +1,11 @@
 version: "3.4"
 services:
-  bsc:
+  binance-smart-chain-node:
     build:
       context: ./build
       args:
         UPSTREAM_VERSION: v1.0.0
-    image: "bsc.public.dappnode.eth:1.0.0"
+    image: "binance-smart-chain-node.public.dappnode.eth:1.0.0"
     volumes:
       - "geth:/data/bsc"
     environment:
@@ -14,10 +14,10 @@ services:
       - SYNC_MODE= full
       - GC_MODE= archive
       - TX_LOOKUP_LIMIT= 0
-      - HTTP_API= admin,debug,web3,eth,txpool,personal,parlia,miner,net
+      - HTTP_API= admin,web3,eth,txpool,net
       - HTTP_CORS_DOMAIN= '*'
-      - WS_API= admin,debug,web3,eth,txpool,personal,parlia,miner,net
-      - WS_ORIGINS= '*' 
+      - WS_API= admin,web3,eth,txpool,net
+      - WS_ORIGINS= '*'
       - GRAPH_QL_CORS_DOMAIN= '*'
       - GRAPH_QL_V_HOSTS= '*'
       - OPTS_2
