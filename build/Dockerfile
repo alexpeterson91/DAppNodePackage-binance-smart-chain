@@ -1,8 +1,7 @@
 FROM debian:bullseye-slim
 
-
 RUN apt-get update -y \
-  && apt-get install -y curl jq unzip \
+  && apt-get install -y curl jq unzip ca-certificates make git bash\
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
@@ -20,8 +19,6 @@ RUN curl --silent "https://api.github.com/repos/binance-chain/bsc/releases/tags/
 ENV BSC_DATADIR=/data/bsc
 
 COPY docker-entrypoint.sh /entrypoint.sh
-
-#VOLUME ["$BSC_DATADIR"]
 
 # NODE P2P
 EXPOSE 30311/udp

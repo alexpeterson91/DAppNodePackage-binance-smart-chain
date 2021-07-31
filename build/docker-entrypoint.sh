@@ -26,7 +26,21 @@ if [ "$1" = "bsc" ]; then
 
   echo "$0: setting data directory to $BSC_DATADIR"
 
-  set -- "$@" --datadir "$BSC_DATADIR" --config $BSC_DATADIR/config.toml 
+  set -- "$@" --datadir "$BSC_DATADIR"
+	--config $BSC_DATADIR/config.toml
+	$OPTS_1
+	--syncmode $SYNC_MODE
+	--gcmode $GC_MODE
+	--txlookuplimit $TX_LOOKUP_LIMIT
+	--http.api $HTTP_API
+	--http.corsdomain "$HTTP_CORS_DOMAIN"
+	--ws.api $WS_API
+	--ws.origins "$WS_ORIGINS"
+	--graphql.corsdomain "$GRAPH_QL_CORS_DOMAIN"
+	--identity "$IDENTITY"
+	--graphql.vhosts "$GRAPH_QL_V_HOSTS"
+	$OPTS_2
+
 fi
 
 echo

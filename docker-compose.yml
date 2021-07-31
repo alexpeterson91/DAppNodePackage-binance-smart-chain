@@ -1,23 +1,32 @@
 version: "3.4"
 services:
-  bsc-node.ryandunn.eth:
-    image: "bsc-node.ryandunn.eth"
-    build:
+  bsc:
+    image: "bsc.public.dappnode.eth:1.0.0"
+		build:
       context: ./build
       args:
         UPSTREAM_VERSION: v1.0.0
     volumes:
-      - "geth:/data/bsc"
+      - "bscdata:/data/bsc"
     environment:
-      - "EXTRA_OPTS= --syncmode full --gcmode archive --txlookuplimit 0 --http.api admin,debug,web3,eth,txpool,personal,parlia,miner,net --http.corsdomain '*' --ws --ws.api admin,debug,web3,eth,txpool,personal,parlia,miner,net --ws.origins '*' --graphql --graphql.corsdomain '*'"
-      - "SYNCMODE= full"
-    ports:
-      - "30311"
-      - 30311/udp # NODE P2P
-      - 30311/tcp # NODE P2P
-      - 6060/tcp  # pprof / metrics
-      - 8545/tcp  # HTTP based JSON RPC API
-      - 8546/tcp  # WebSocket based JSON RPC API
-    restart: always
+      - OPTS_1= --nousb --http --ws --graphql
+			- IDENTITY= 'my-bsc-node-name'
+			- SYNC_MODE= full
+			- GC_MODE= archive
+			- TX_LOOKUP_LIMIT= 0
+			- HTTP_API= admin,debug,web3,eth,txpool,personal,parlia,miner,net
+			- HTTP_CORS_DOMAIN= '*'
+			- WS_API= admin,debug,web3,eth,txpool,personal,parlia,miner,net
+			- WS_ORIGINS= '*' 
+			- GRAPH_QL_CORS_DOMAIN= '*'
+			- GRAPH_QL_V_HOSTS= '*'
+			- OPTS_2
+		ports:
+      - 30311/udp
+      - 30311/tcp
+      - 6060/tcp
+      - 8545/tcp
+      - 8546/tcp
+    restart: unless-stopped
 volumes:
-  geth: {}
+  bscdata: {}
