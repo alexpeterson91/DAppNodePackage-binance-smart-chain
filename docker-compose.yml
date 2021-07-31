@@ -1,27 +1,27 @@
 version: "3.4"
 services:
   bsc:
-    image: "bsc.public.dappnode.eth:1.0.0"
-		build:
+    build:
       context: ./build
       args:
         UPSTREAM_VERSION: v1.0.0
+    image: "bsc.public.dappnode.eth:1.0.0"
     volumes:
       - "geth:/data/bsc"
     environment:
       - OPTS_1= --nousb --http --ws --graphql
-			- IDENTITY= 'my-bsc-node-name'
-			- SYNC_MODE= full
-			- GC_MODE= archive
-			- TX_LOOKUP_LIMIT= 0
-			- HTTP_API= admin,debug,web3,eth,txpool,personal,parlia,miner,net
-			- HTTP_CORS_DOMAIN= '*'
-			- WS_API= admin,debug,web3,eth,txpool,personal,parlia,miner,net
-			- WS_ORIGINS= '*' 
-			- GRAPH_QL_CORS_DOMAIN= '*'
-			- GRAPH_QL_V_HOSTS= '*'
-			- OPTS_2
-		ports:
+      - IDENTITY= 'my-bsc-node-name'
+      - SYNC_MODE= full
+      - GC_MODE= archive
+      - TX_LOOKUP_LIMIT= 0
+      - HTTP_API= admin,debug,web3,eth,txpool,personal,parlia,miner,net
+      - HTTP_CORS_DOMAIN= '*'
+      - WS_API= admin,debug,web3,eth,txpool,personal,parlia,miner,net
+      - WS_ORIGINS= '*' 
+      - GRAPH_QL_CORS_DOMAIN= '*'
+      - GRAPH_QL_V_HOSTS= '*'
+      - OPTS_2
+    ports:
       - 30311/udp
       - 30311/tcp
       - 6060/tcp
