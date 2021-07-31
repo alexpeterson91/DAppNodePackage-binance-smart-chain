@@ -1,8 +1,7 @@
 version: "3.4"
 services:
-  #binance-smart-chain.dnp.dappnode.eth:
-  '0xf18686AcB3bfE4353f3aBd7Edad784Dc3D31E69f'
-    image: "binance-smart-chain.ryandunn.eth:1.0.0"
+  binance-smart-chain.dnp.dappnode.eth:
+    image: "binance-smart-chain.dnp.eth:1.0.0"
     build:
       context: ./build
       args:
@@ -10,8 +9,8 @@ services:
     volumes:
       - "geth:/root/.ethereum"
     environment:
-      - "EXTRA_OPTS=--http.api eth,net,web3,txpool --nousb"
-      - SYNCMODE
+      - "EXTRA_OPTS= --nousb --syncmode full --gcmode archive --txlookuplimit 0 --http.api admin,debug,web3,eth,txpool,personal,parlia,miner,net --http.corsdomain '*' --ws --ws.api admin,debug,web3,eth,txpool,personal,parlia,miner,net --ws.origins '*' --graphql --graphql.corsdomain '*'"
+      - "SYNCMODE = full"
     ports:
       - "30311"
       - 30311/udp # NODE P2P
