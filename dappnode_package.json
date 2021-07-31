@@ -2,8 +2,8 @@
   "name": "binance-smart-chain.dnp.dappnode.eth",
   "version": "1.0.0",
   "upstreamVersion": "v1.0.0",
-  "upstreamRepo": "dappnode/DAppNodePackage-ethereum-classic"
-  "upstreamArg": "UPSTREAM_VERSION"
+  "upstreamRepo": "dappnode/DAppNodePackage-ethereum-classic",
+  "upstreamArg": "UPSTREAM_VERSION",
   "shortDescription": "BSC DAppNodePackage",
   "description": "The Binance Smart Chain is a blockchain created to allow for fast and decentralized trading. It is a high-performance blockchain focusing on smart contract programmability, and it is intended to solve scalability problems that have plagued the blockchain community. This packages deploys a node for the Binance Smart Chain.",
   "type": "library",
@@ -12,7 +12,7 @@
   "architectures": ["linux/amd64", "linux/arm64"],
   "contributors": [    
     "Eduardo Antuña <eduadiez@gmail.com> (https://github.com/eduadiez)",
-    "Afri Schoedon <github@fault.dev> (https://github.com/byz-f)"
+    "Afri Schoedon <github@fault.dev> (https://github.com/byz-f)",
     "DAppNode Association <admin@dappnode.io> (https://github.com/dappnode)"
   ],
   "categories": [
