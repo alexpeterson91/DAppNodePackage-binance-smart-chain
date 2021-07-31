@@ -6,7 +6,7 @@
 
  - Release hash : /ipfs/QmNZVuzz4wsH4xxSeMWGLvkMr9XxxvvezVFVHjNYiq96qH
 
-
+ - http://my.dappnode/#/installer/%2Fipfs%2FQmNZVuzz4wsH4xxSeMWGLvkMr9XxxvvezVFVHjNYiq96qH
 
 
 ### Prerequisites
