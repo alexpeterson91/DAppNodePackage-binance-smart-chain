@@ -10,7 +10,7 @@ services:
       - "geth:/data/bsc"
     environment:
       - OPTS_1= --nousb --http --ws --graphql
-      - IDENTITY= 'my-bsc-node-name'
+      - IDENTITY= my-bsc-node-name
       - SYNC_MODE= full
       - GC_MODE= archive
       - TX_LOOKUP_LIMIT= 0
