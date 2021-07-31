@@ -14,7 +14,7 @@ if [ "$1" = "bsc" ]; then
     mkdir -p "$BSC_DATADIR"
     chmod 700 "$BSC_DATADIR"
     echo "$0: initiating blockchain"
-    bsc --datadir "$BSC_DATADIR" account new init /genesis.json
+    bsc --datadir "$BSC_DATADIR" init /genesis.json
 		echo "$0: setting data directory to $BSC_DATADIR"
   fi
 
