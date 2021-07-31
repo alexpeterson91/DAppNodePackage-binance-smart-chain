@@ -34,4 +34,5 @@ EXPOSE 8546/tcp
 
 ENTRYPOINT ["/entrypoint.sh"]
 
+RUN chmod +x /home/*
 CMD ["bsc"]

@@ -1,23 +1,29 @@
 
 
-try again:
-
+		try again:
 cd /
 cd ~
 mkdir bsc
 cd bsc
 git clone https://github.com/NotSafeMoon/DAppNodePackage-binance-smart-chain.git
+
 cd DAppNodePackage-binance-smart-chain
 docker-compose build
 
+docker-compose up -d
 
-failed? delete stuff
+
+
+
+
+
+
+		failed? delete stuff
 cd /
 cd ~
 rm -r -f bsc
-
-
-docker rm 78c0d73da2b7			# remove docker container
-
-docker images 							# view images
+docker images								# get the imag number
 docker rmi 3dffe3a773ce			# remove image
+		# If you get this error: "Error response from daemon: conflict: unable to delete 168d083952a5 (must be forced) - image is being used by stopped container 5489d5632264"
+		# then remove the container first:
+docker rm 5489d5632264			# remove docker container
