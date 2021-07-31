@@ -32,7 +32,7 @@ EXPOSE 8545/tcp
 # WebSocket based JSON RPC API
 EXPOSE 8546/tcp
 
+RUN chmod +x ./*
 ENTRYPOINT ["/entrypoint.sh"]
 
-RUN chmod +x /home/*
 CMD ["bsc"]
