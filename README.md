@@ -1,28 +1,35 @@
-# DAppNode package for BSC
+# DAppNode package for Binance Smart Chain
 
-[![DAppNodeStore Available](https://img.shields.io/badge/DAppNodeStore-Available-brightgreen.svg)](http://my.dappnode/#/installer/binance-smart-chain.dnp.dappnode.eth)
 
-[![Core-Geth github](https://img.shields.io/badge/Core--Geth-Github-blue.svg)](https://github.com/etclabscore/core-geth)
 
-You can use this package without installing it in your DAppNode following these instructions:
 
-## Prerequisites
 
-- git
+### Prerequisites
 
-   Install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) commandline tool.
 
-- docker
 
-   Install [docker](https://docs.docker.com/engine/installation). The community edition (docker-ce) will work. In Linux make sure you grant permissions to the current user to use docker by adding current user to docker group, `sudo usermod -aG docker $USER`. Once you update the users group, exit from the current terminal and open a new one to make effect.
+- Install [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) commandline tool.
 
-- docker-compose
+- Install [docker](https://docs.docker.com/engine/installation). The community edition (docker-ce) will work. In Linux make sure you grant permissions to the current user to use docker by adding current user to docker group, `sudo usermod -aG docker $USER`. Once you update the users group, exit from the current terminal and open a new one to make effect.
 
-   Install [docker-compose](https://docs.docker.com/compose/install)
+- Install [docker-compose](https://docs.docker.com/compose/install)
    
 **Note**: Make sure you can run `git`, `docker ps`, `docker-compose` without any issue and without sudo command.
+   
+   - Install [DAppNodeSDK](https://github.com/dappnode/DAppNodeSDK)
+```
+   $ npm install -g @dappnode/dappnodesdk
+```
 
-## Buidling
+## Buidling the DAppNodePackage
+
+```   
+   $ git clone https://github.com/NotSafeMoon/DAppNodePackage-binance-smart-chain.git
+   $ cd DAppNodePackage-binance-smart-chain
+   $ dappnodesdk build
+```
+
+You can use this package without installing it in your DAppNode following these instructions:
 
 `docker-compose build`
 
