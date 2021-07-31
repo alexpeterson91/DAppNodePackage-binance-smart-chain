@@ -1,7 +1,7 @@
 FROM debian:bullseye-slim
 
 RUN apt-get update -y \
-  && apt-get install -y curl jq unzip ca-certificates make git bash\
+  && apt-get install -y curl jq unzip ca-certificates make git bash apt-utils\
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
