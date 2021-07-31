@@ -7,7 +7,7 @@ services:
       args:
         UPSTREAM_VERSION: v1.0.0
     volumes:
-      - "bscdata:/data/bsc"
+      - "geth:/data/bsc"
     environment:
       - OPTS_1= --nousb --http --ws --graphql
 			- IDENTITY= 'my-bsc-node-name'
@@ -29,4 +29,4 @@ services:
       - 8546/tcp
     restart: unless-stopped
 volumes:
-  bscdata: {}
+  geth: {}
