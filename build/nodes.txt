@@ -1,0 +1,23 @@
+
+
+try again:
+
+cd /
+cd ~
+mkdir bsc
+cd bsc
+git clone https://github.com/NotSafeMoon/DAppNodePackage-binance-smart-chain.git
+cd DAppNodePackage-binance-smart-chain
+docker-compose build
+
+
+failed? delete stuff
+cd /
+cd ~
+rm -r -f bsc
+
+
+docker rm 78c0d73da2b7			# remove docker container
+
+docker images 							# view images
+docker rmi 3dffe3a773ce			# remove image
