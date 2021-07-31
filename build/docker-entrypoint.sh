@@ -14,7 +14,7 @@ if [ "$1" = "bsc" ]; then
     mkdir -p "$BSC_DATADIR"
     chmod 700 "$BSC_DATADIR"
     echo "$0: initiating blockchain"
-    bsc --datadir "$BSC_DATADIR" init /genesis.json
+    bsc --datadir "$BSC_DATADIR" account new init /genesis.json
   fi
 
   if [ ! -f $BSC_DATADIR/config.toml ]; then
@@ -26,7 +26,7 @@ if [ "$1" = "bsc" ]; then
 
   echo "$0: setting data directory to $BSC_DATADIR"
 
-  set -- "$@" --datadir "$BSC_DATADIR" --config $BSC_DATADIR/config.toml $OPTS_1 --syncmode $SYNC_MODE --gcmode $GC_MODE --txlookuplimit $TX_LOOKUP_LIMIT --http.api $HTTP_API --http.corsdomain "$HTTP_CORS_DOMAIN" --ws.api $WS_API --ws.origins "$WS_ORIGINS" --graphql.corsdomain "$GRAPH_QL_CORS_DOMAIN" --identity "$IDENTITY" --graphql.vhosts "$GRAPH_QL_V_HOSTS" $OPTS_2
+  set -- "$@" --datadir "$BSC_DATADIR" --config "$BSC_DATADIR/config.toml" "$OPTS_1" --syncmode "$SYNC_MODE" --gcmode "$GC_MODE" --txlookuplimit "$TX_LOOKUP_LIMIT" --http.api "$HTTP_API" --http.corsdomain "$HTTP_CORS_DOMAIN" --ws.api "$WS_API" --ws.origins "$WS_ORIGINS" --graphql.corsdomain "$GRAPH_QL_CORS_DOMAIN" --identity "$IDENTITY" --graphql.vhosts "$GRAPH_QL_V_HOSTS" "$OPTS_2"
 
 fi
 
