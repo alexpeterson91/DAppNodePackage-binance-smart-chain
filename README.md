@@ -1,11 +1,14 @@
 # DAppNode package for Binance Smart Chain
 
- 
+  DNP (DAppNode Package) built and uploaded 10/16/2021
+  -updated geth to 1.1.2
+  Release hash : /ipfs/QmUue8r5nnagTxgBXWtRXDvqPW4fcptD58AKUxHccYVHwe
+  http://my.dappnode/#/installer/%2Fipfs%2FQmUue8r5nnagTxgBXWtRXDvqPW4fcptD58AKUxHccYVHwe
+  
+  
   
  - DNP (DAppNode Package) built and uploaded	7/31/2021
-
  - Release hash : /ipfs/QmNZVuzz4wsH4xxSeMWGLvkMr9XxxvvezVFVHjNYiq96qH
-
  - http://my.dappnode/#/installer/%2Fipfs%2FQmNZVuzz4wsH4xxSeMWGLvkMr9XxxvvezVFVHjNYiq96qH
 
 
