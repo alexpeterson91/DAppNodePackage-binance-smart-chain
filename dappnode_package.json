@@ -6,12 +6,13 @@
 	"upstreamRepo": "dappnode/DAppNodePackage-ethereum-classic",
 	"upstreamArg": "v1.0.0",
 	"description": "The Binance Smart Chain is a blockchain created to allow for fast and decentralized trading. It is a high-performance blockchain focusing on smart contract programmability, and it is intended to solve scalability problems that have plagued the blockchain community. This packages deploys a node for the Binance Smart Chain.",
-	"author": "Ryan Dunn <info@notsafemoon.com> https://github.com/NotSafeMoon",
+	"author": "Ryan Dunn https://github.com/flavorsDev",
 	"type": "library",
 	"chain": "ethereum",
 	"categories": ["Blockchain"],
 	"links": {
-	  "homepage": "https://github.com/NotSafeMoon"
+	  "dev": "https://github.com/flavorsDefi",
+	  "Binance": "https://www.binance.org/en/smartChain"
 	},
 	"license": "GLP-3.0",
 	"repository": {
