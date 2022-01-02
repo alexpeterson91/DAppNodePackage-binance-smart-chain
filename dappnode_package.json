@@ -14,7 +14,7 @@
 	  "dev": "https://github.com/flavorsDefi",
 	  "Binance": "https://www.binance.org/en/smartChain"
 	},
-	"license": "GLP-3.0",
+	"license": "GPL-3.0",
 	"repository": {
 	  "type": "git",
 	  "url": "https://github.com/NotSafeMoon/DAppNodePackage-binance-smart-chain.git"
